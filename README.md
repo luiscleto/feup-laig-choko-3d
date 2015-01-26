@@ -22,6 +22,7 @@ Instructions
 For rules on how to play Choko see the link mentioned above.
 The interface follows an approach similar to classic computer games such as minesweeper or freecell in which the game starts with default configuration values to avoid complicated and annoying menus. At any time the player can change these values and, if they want to, reset the game. Otherwise, the changes will affect the ongoing game.
 Available options:
+
     - Start a new game
     - Change player type (Either player can be human or an AI of any 3 difficulties: easy, medium and hard)
     - Activate and specify maximum duration for player moves
@@ -38,8 +39,10 @@ Voice Control
 =============
 
 For controlling a player's turn with voice controls, a player must first activate the option to allow voice control. The voice commands allowed are:
+
     - move piece from <column> <row> to <column> <row>
     - drop piece on <column> <row>
     -remove piece on <column> <row>
+    
 <column>'s are identified by a letter (as seen on the board) and the user can either say the letter (a, b, c, d, e) or use the NATO phonetic alphabet (alpha, bravo, charlie, delta, echo). It is recommended to use the latter alternative as the VOCE library has an easier time identifying the sounds.
 <row>'s are identified by a number from 1 to 5 (as seen on the board).
