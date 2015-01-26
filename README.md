@@ -8,6 +8,7 @@ For information on how to play Choko see: http://en.wikipedia.org/wiki/Choko_%28
 To run the program (LAIG-PROJ2.exe) you may need to add the jvm.dll to your path (It's usually in C:\Program Files (x86)\Java\jdk1.x.x_xx\jre\bin\client). 
 Additionally, to compile the program, you might also need to add the paths for the "include" folder and the "win32" folder within (these are also in the jdk folder) as well as add jvm.lib as an Additional Dependency.
 
+
 Screenshots
 ============
 ![start](start-MIEIC.png)
