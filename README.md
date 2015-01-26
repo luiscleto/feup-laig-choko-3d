@@ -44,5 +44,5 @@ For controlling a player's turn with voice controls, a player must first activat
     - drop piece on <column> <row>
     - remove piece on <column> <row>
     
-<column>'s are identified by a letter (as seen on the board) and the user can either say the letter (a, b, c, d, e) or use the NATO phonetic alphabet (alpha, bravo, charlie, delta, echo). It is recommended to use the latter alternative as the VOCE library has an easier time identifying the sounds.
-<row>'s are identified by a number from 1 to 5 (as seen on the board).
+&lt;column&gt;'s are identified by a letter (as seen on the board) and the user can either say the letter (a, b, c, d, e) or use the NATO phonetic alphabet (alpha, bravo, charlie, delta, echo). It is recommended to use the latter alternative as the VOCE library has an easier time identifying the sounds.
+&lt;row&gt;'s are identified by a number from 1 to 5 (as seen on the board).
