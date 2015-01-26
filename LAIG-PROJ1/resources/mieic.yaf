@@ -1,0 +1,302 @@
+<!-- Os comentarios devem ter espacos no inicio e no fim, para --> 
+<!-- separar dos hifens --> 
+<!-- Nao devem ser usados caracteres especiais (p.ex. acentos) --> 
+<!-- Todas as tags e atributos sao obrigatorios, exceto onde for --> 
+<!-- referido o contrario --> 
+
+<yaf> 
+
+    <globals background="0 0 0 1" drawmode="fill" shading="gouraud" cullface="back" cullorder="CCW" /> 
+	
+	<cameras initial="camera1">
+		<perspective id="camera1" near="0.1" far="500.0" angle="90.0" pos="0 20 10" target="0 0 0" />
+	</cameras>
+	
+	<lighting doublesided="false" local="true" enabled="true" ambient="0.7 0.7 0.7 1">
+    <omni id="light1" enabled="true" 
+          location="0 50 0" 
+          ambient="0.1 0.1 0.1 0.1" 
+          diffuse="0.2 0.2 0.2 0.2" 
+          specular="0.9 0.9 0.9 1" 
+      />
+    <spot id="light2" enabled="true" 
+          location="0 40 0"
+          ambient="0 0 0 1"
+          diffuse="0 0 0 1"
+          specular="0 1 1 1"
+		  angle="20"
+          exponent="1"
+          direction="0 -1 0"
+		  
+      />
+  </lighting>
+
+  <textures>
+	<texture id="boxfloor" file="negy.jpg" />
+	<texture id="boxfront" file="posz.jpg" />
+	<texture id="boxceiling" file="posy.jpg" />
+	<texture id="boxleft" file="negx.jpg" />
+	<texture id="boxright" file="posx.jpg" />
+	<texture id="boxbehind" file="negz.jpg" />
+	<texture id="board" file="woodChessboard.jpg" />
+	<texture id="aas" file="aas.jpg" />
+	<texture id="rmv" file="rmv.jpg" />
+  </textures>
+
+  <appearances>
+	<appearance id="aas"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="aas"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	 <appearance id="rmv"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="rmv"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	<appearance id="board"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="board"
+		texlength_s="28"
+		texlength_t="28"
+     />
+  
+	 <appearance id="black"
+        emissive="0 0 0 0"
+        ambient="0.1 0.1 0.1 1"
+        diffuse="0.1 0.1 0.1 1"
+        specular="1 1 1 1"
+        shininess="60"
+     />
+	 <appearance id="white"
+        emissive="0 0 0 0"
+        ambient="0.9 0.9 0.9 1"
+        diffuse="0.9 0.9 0.9 1"
+        specular="1 1 1 1"
+        shininess="60"
+     />
+	<appearance id="boxbehind"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="boxbehind"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	<appearance id="boxright"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="boxright"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	<appearance id="boxleft"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="boxleft"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	<appearance id="boxceiling"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="boxceiling"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	<appearance id="boxfront"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="boxfront"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	<appearance id="boxfloor"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="boxfloor"
+		texlength_s="1"
+		texlength_t="1"
+     />
+  </appearances>
+  
+  <animations>
+  </animations>
+  
+  <graph rootid="cena">
+         <node id="cena">
+            <transforms>
+            </transforms> 
+			
+            <children>
+				<noderef id="skybox" />
+            </children>
+        </node>
+		
+		<node id="skybox" displaylist="true" >
+			<transforms>
+			</transforms>
+			
+			<children>
+				<noderef id="floor" />
+				<noderef id="ceiling" />
+				<noderef id="boxleft" />
+				<noderef id="boxright" />
+				<noderef id="boxfront" />
+				<noderef id="boxbehind" />
+			</children>
+		</node>
+		
+		<node id="boxbehind" >
+			<transforms>
+				<translate to="0 0 50" />
+				<rotate axis="z" angle="180" />
+				<rotate axis="x" angle="-90" />
+				<scale factor="100 0 100" />
+			</transforms>
+			
+			<appearanceref id="boxbehind" />
+			
+			<children>
+				<plane parts="100" />
+			</children>
+		</node>
+		
+		<node id="boxfront" >
+			<transforms>
+				<translate to="0 0 -50" />
+				<rotate axis="x" angle="90" />
+				<scale factor="100 0 100" />
+			</transforms>
+			
+			<appearanceref id="boxfront" />
+			
+			<children>
+				<plane parts="100" />
+			</children>
+		</node>
+		
+		<node id="boxright" >
+			<transforms>
+				<translate to="50 0 0" />
+				<rotate axis="y" angle="-90" />
+				<rotate axis="x" angle="90" />
+				<scale factor="100 0 100" />
+			</transforms>
+			
+			<appearanceref id="boxright" />
+			
+			<children>
+				<plane parts="100" />
+			</children>
+		</node>
+		
+		<node id="boxleft" >
+			<transforms>
+				<translate to="-50 0 0" />
+				<rotate axis="y" angle="90" />
+				<rotate axis="x" angle="90" />
+				<scale factor="100 0 100" />
+			</transforms>
+			
+			<appearanceref id="boxleft" />
+			
+			<children>
+				<plane parts="100" />
+			</children>
+		</node>
+		
+		<node id="ceiling" >
+			<transforms>
+				<translate to="0 50 0" />
+				<rotate axis="x" angle="180" />
+				<scale factor="100 0 100" />
+			</transforms>
+			
+			<appearanceref id="boxceiling" />
+			
+			<children>
+				<plane parts="100" />
+			</children>
+		</node>
+		
+		<node id="floor" >
+			<transforms>
+				<translate to="0 -50 0" />
+				<scale factor="100 0 100" />
+			</transforms>
+			
+			<appearanceref id="boxfloor" />
+			
+			<children>
+				<plane parts="100" />
+			</children>
+		</node>
+		
+    </graph> 
+	
+	<blackPiece rootid="bpiece">
+		<node id="bpiece" displaylist="true" >
+            <transforms>
+				<translate to="0 1 0" />
+				<rotate axis="x" angle="90" />
+            </transforms> 
+			
+			<appearanceref id="rmv" />
+			
+            <children>
+				<cylinder base="1.5" top="1.5" height="0.5" slices="40" stacks="20" />
+            </children>
+        </node>
+	</blackPiece>
+	
+	<whitePiece rootid="wpiece">
+		<node id="wpiece" displaylist="true" >
+            <transforms>
+				<translate to="0 1 0" />
+				<rotate axis="y" angle="180" />
+				<rotate axis="x" angle="90" />
+            </transforms>
+
+			<appearanceref id="aas" />			
+			
+            <children>
+				<cylinder base="1.5" top="1.5" height="0.5" slices="40" stacks="20" />
+            </children>
+        </node>
+	</whitePiece>
+	
+	<board appearanceID="board" />
+
+</yaf> 

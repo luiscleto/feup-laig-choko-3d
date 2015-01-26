@@ -1,0 +1,13 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Moves Grammar file
+ */
+
+grammar game;
+
+public <chokoMoves> = (move piece from (a | b | c | d | e | alpha | bravo | charlie | delta | echo) (one | two | three | four | five) to (a | b | c | d | e | alpha | bravo | charlie | delta | echo) (one | two | three | four | five));
+
+public <chokoDrop> = (drop piece on (a | b | c | d | e | alpha | bravo | charlie | delta | echo) (one | two | three | four | five));
+
+public <chokoRemove> = (remove piece on (a | b | c | d | e | alpha | bravo | charlie | delta | echo) (one | two | three | four | five));

@@ -1,0 +1,727 @@
+<!-- Os comentarios devem ter espacos no inicio e no fim, para --> 
+<!-- separar dos hifens --> 
+<!-- Nao devem ser usados caracteres especiais (p.ex. acentos) --> 
+<!-- Todas as tags e atributos sao obrigatorios, exceto onde for --> 
+<!-- referido o contrario --> 
+
+<yaf> 
+
+    <globals background="0 0 0 1" drawmode="fill" shading="gouraud" cullface="back" cullorder="CCW" /> 
+	
+	<cameras initial="camera1">
+		<perspective id="camera1" near="0.1" far="500.0" angle="90.0" pos="0 20 10" target="0 0 0" />
+	</cameras>
+	
+	<lighting doublesided="false" local="true" enabled="true" ambient="0.7 0.7 0.7 1">
+    <omni id="light1" enabled="true" 
+          location="0 50 0" 
+          ambient="0.1 0.1 0.1 0.1" 
+          diffuse="0.2 0.2 0.2 0.2" 
+          specular="0.9 0.9 0.9 1" 
+      />
+    <spot id="light2" enabled="true" 
+          location="0 40 0"
+          ambient="0 0 0 1"
+          diffuse="0 0 0 1"
+          specular="0 1 1 1"
+		  angle="20"
+          exponent="1"
+          direction="0 -1 0"
+		  
+      />
+  </lighting>
+
+  <textures>
+	<texture id="moustachio" file="moustachio2.png" />
+	<texture id="davyjones" file="davyjones.png" />
+	<texture id="boxfloor" file="box_floor.png" />
+	<texture id="boxfront" file="box_front.png" />
+	<texture id="boxceiling" file="box_ceiling.png" />
+	<texture id="boxleft" file="box_left.png" />
+	<texture id="boxright" file="box_right.png" />
+	<texture id="boxbehind" file="box_behind.png" />
+	<texture id="board" file="waterBoard.jpg" />
+	<texture id="aas" file="aas.jpg" />
+	<texture id="rmv" file="rmv.jpg" />
+  </textures>
+
+  <appearances>
+	<appearance id="aas"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="aas"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	 <appearance id="rmv"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="rmv"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	<appearance id="board"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="board"
+		texlength_s="28"
+		texlength_t="28"
+     />
+  
+	 <appearance id="black"
+        emissive="0 0 0 0"
+        ambient="0.1 0.1 0.1 1"
+        diffuse="0.1 0.1 0.1 1"
+        specular="1 1 1 1"
+        shininess="60"
+     />
+	 <appearance id="white"
+        emissive="0 0 0 0"
+        ambient="0.9 0.9 0.9 1"
+        diffuse="0.9 0.9 0.9 1"
+        specular="1 1 1 1"
+        shininess="60"
+     />
+	<appearance id="boxbehind"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="boxbehind"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	<appearance id="boxright"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="boxright"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	<appearance id="boxleft"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="boxleft"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	<appearance id="boxceiling"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="boxceiling"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	<appearance id="boxfront"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="boxfront"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	<appearance id="boxfloor"
+        emissive="0 0 0 0"
+        ambient="1 1 1 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="boxfloor"
+		texlength_s="1"
+		texlength_t="1"
+     />
+	 <appearance id="boat"
+        emissive="0 0 0 0"
+        ambient="0.5 0.5 0.5 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="moustachio"
+		texlength_s="2"
+		texlength_t="1"
+     />
+	 
+	 <appearance id="boat2"
+        emissive="0 0 0 0"
+        ambient="0.5 0.5 0.5 1"
+        diffuse="0.5 0.5 0.5 1"
+        specular="0.7 0.7 0.7 1"
+        shininess="60"
+		textureref="davyjones"
+		texlength_s="2"
+		texlength_t="1"
+     />
+  </appearances>
+  
+  <animations>
+	<animation id="boatAnimation" span="2.0" type="linear">
+		<controlpoint xx="0.0" yy="0.25" zz="0" />
+		<controlpoint xx="0.0" yy="-0.25" zz="0" />
+		<controlpoint xx="0.0" yy="0" zz="0" />
+	</animation>
+	<animation id="gullAnim" span="5.0" type="linear">
+		<controlpoint xx="-0.000228457" yy="0" zz="0.0261786" />
+		<controlpoint xx="-0.000913759" yy="0" zz="0.0523492" />
+		<controlpoint xx="-0.0020557" yy="0" zz="0.0785039" />
+		<controlpoint xx="-0.00365392" yy="0" zz="0.104635" />
+		<controlpoint xx="-0.00570795" yy="0" zz="0.130734" />
+		<controlpoint xx="-0.00821716" yy="0" zz="0.156793" />
+		<controlpoint xx="-0.0111808" yy="0" zz="0.182804" />
+		<controlpoint xx="-0.0145979" yy="0" zz="0.20876" />
+		<controlpoint xx="-0.0184675" yy="0" zz="0.234652" />
+		<controlpoint xx="-0.0227884" yy="0" zz="0.260472" />
+		<controlpoint xx="-0.0275592" yy="0" zz="0.286213" />
+		<controlpoint xx="-0.0327786" yy="0" zz="0.311868" />
+		<controlpoint xx="-0.0384449" yy="0" zz="0.337427" />
+		<controlpoint xx="-0.0445564" yy="0" zz="0.362883" />
+		<controlpoint xx="-0.0511113" yy="0" zz="0.388229" />
+		<controlpoint xx="-0.0581075" yy="0" zz="0.413456" />
+		<controlpoint xx="-0.0655429" yy="0" zz="0.438558" />
+		<controlpoint xx="-0.0734152" yy="0" zz="0.463525" />
+		<controlpoint xx="-0.0817221" yy="0" zz="0.488352" />
+		<controlpoint xx="-0.0904611" yy="0" zz="0.51303" />
+		<controlpoint xx="-0.0996294" yy="0" zz="0.537552" />
+		<controlpoint xx="-0.109224" yy="0" zz="0.56191" />
+		<controlpoint xx="-0.119243" yy="0" zz="0.586097" />
+		<controlpoint xx="-0.129682" yy="0" zz="0.610105" />
+		<controlpoint xx="-0.140538" yy="0" zz="0.633927" />
+		<controlpoint xx="-0.151809" yy="0" zz="0.657557" />
+		<controlpoint xx="-0.16349" yy="0" zz="0.680986" />
+		<controlpoint xx="-0.175579" yy="0" zz="0.704207" />
+		<controlpoint xx="-0.18807" yy="0" zz="0.727214" />
+		<controlpoint xx="-0.200962" yy="0" zz="0.75" />
+		<controlpoint xx="-0.214249" yy="0" zz="0.772557" />
+		<controlpoint xx="-0.227928" yy="0" zz="0.794879" />
+		<controlpoint xx="-0.241994" yy="0" zz="0.816959" />
+		<controlpoint xx="-0.256444" yy="0" zz="0.838789" />
+		<controlpoint xx="-0.271272" yy="0" zz="0.860365" />
+		<controlpoint xx="-0.286475" yy="0" zz="0.881678" />
+		<controlpoint xx="-0.302047" yy="0" zz="0.902723" />
+		<controlpoint xx="-0.317984" yy="0" zz="0.923492" />
+		<controlpoint xx="-0.334281" yy="0" zz="0.943981" />
+		<controlpoint xx="-0.350933" yy="0" zz="0.964181" />
+		<controlpoint xx="-0.367936" yy="0" zz="0.984089" />
+		<controlpoint xx="-0.385283" yy="0" zz="1.0037" />
+		<controlpoint xx="-0.402969" yy="0" zz="1.023" />
+		<controlpoint xx="-0.42099" yy="0" zz="1.04199" />
+		<controlpoint xx="-0.43934" yy="0" zz="1.06066" />
+		<controlpoint xx="-0.458012" yy="0" zz="1.07901" />
+		<controlpoint xx="-0.477002" yy="0" zz="1.09703" />
+		<controlpoint xx="-0.496304" yy="0" zz="1.11472" />
+		<controlpoint xx="-0.515911" yy="0" zz="1.13206" />
+		<controlpoint xx="-0.535819" yy="0" zz="1.14907" />
+		<controlpoint xx="-0.556019" yy="0" zz="1.16572" />
+		<controlpoint xx="-0.576508" yy="0" zz="1.18202" />
+		<controlpoint xx="-0.597277" yy="0" zz="1.19795" />
+		<controlpoint xx="-0.618322" yy="0" zz="1.21353" />
+		<controlpoint xx="-0.639635" yy="0" zz="1.22873" />
+		<controlpoint xx="-0.661211" yy="0" zz="1.24356" />
+		<controlpoint xx="-0.683041" yy="0" zz="1.25801" />
+		<controlpoint xx="-0.705121" yy="0" zz="1.27207" />
+		<controlpoint xx="-0.727443" yy="0" zz="1.28575" />
+		<controlpoint xx="-0.75" yy="0" zz="1.29904" />
+		<controlpoint xx="-0.772786" yy="0" zz="1.31193" />
+		<controlpoint xx="-0.795793" yy="0" zz="1.32442" />
+		<controlpoint xx="-0.819014" yy="0" zz="1.33651" />
+		<controlpoint xx="-0.842443" yy="0" zz="1.34819" />
+		<controlpoint xx="-0.866073" yy="0" zz="1.35946" />
+		<controlpoint xx="-0.889895" yy="0" zz="1.37032" />
+		<controlpoint xx="-0.913903" yy="0" zz="1.38076" />
+		<controlpoint xx="-0.93809" yy="0" zz="1.39078" />
+		<controlpoint xx="-0.962448" yy="0" zz="1.40037" />
+		<controlpoint xx="-0.98697" yy="0" zz="1.40954" />
+		<controlpoint xx="-1.01165" yy="0" zz="1.41828" />
+		<controlpoint xx="-1.03647" yy="0" zz="1.42658" />
+		<controlpoint xx="-1.06144" yy="0" zz="1.43446" />
+		<controlpoint xx="-1.08654" yy="0" zz="1.44189" />
+		<controlpoint xx="-1.11177" yy="0" zz="1.44889" />
+		<controlpoint xx="-1.13712" yy="0" zz="1.45544" />
+		<controlpoint xx="-1.16257" yy="0" zz="1.46156" />
+		<controlpoint xx="-1.18813" yy="0" zz="1.46722" />
+		<controlpoint xx="-1.21379" yy="0" zz="1.47244" />
+		<controlpoint xx="-1.23953" yy="0" zz="1.47721" />
+		<controlpoint xx="-1.26535" yy="0" zz="1.48153" />
+		<controlpoint xx="-1.29124" yy="0" zz="1.4854" />
+		<controlpoint xx="-1.3172" yy="0" zz="1.48882" />
+		<controlpoint xx="-1.34321" yy="0" zz="1.49178" />
+		<controlpoint xx="-1.36927" yy="0" zz="1.49429" />
+		<controlpoint xx="-1.39537" yy="0" zz="1.49635" />
+		<controlpoint xx="-1.4215" yy="0" zz="1.49794" />
+		<controlpoint xx="-1.44765" yy="0" zz="1.49909" />
+		<controlpoint xx="-1.47382" yy="0" zz="1.49977" />
+		<controlpoint xx="-1.5" yy="0" zz="1.5" />
+		<controlpoint xx="-1.52618" yy="0" zz="1.49977" />
+		<controlpoint xx="-1.55235" yy="0" zz="1.49909" />
+		<controlpoint xx="-1.5785" yy="0" zz="1.49794" />
+		<controlpoint xx="-1.60463" yy="0" zz="1.49635" />
+		<controlpoint xx="-1.63073" yy="0" zz="1.49429" />
+		<controlpoint xx="-1.65679" yy="0" zz="1.49178" />
+		<controlpoint xx="-1.6828" yy="0" zz="1.48882" />
+		<controlpoint xx="-1.70876" yy="0" zz="1.4854" />
+		<controlpoint xx="-1.73465" yy="0" zz="1.48153" />
+		<controlpoint xx="-1.76047" yy="0" zz="1.47721" />
+		<controlpoint xx="-1.78621" yy="0" zz="1.47244" />
+		<controlpoint xx="-1.81187" yy="0" zz="1.46722" />
+		<controlpoint xx="-1.83743" yy="0" zz="1.46156" />
+		<controlpoint xx="-1.86288" yy="0" zz="1.45544" />
+		<controlpoint xx="-1.88823" yy="0" zz="1.44889" />
+		<controlpoint xx="-1.91346" yy="0" zz="1.44189" />
+		<controlpoint xx="-1.93856" yy="0" zz="1.43446" />
+		<controlpoint xx="-1.96353" yy="0" zz="1.42658" />
+		<controlpoint xx="-1.98835" yy="0" zz="1.41828" />
+		<controlpoint xx="-2.01303" yy="0" zz="1.40954" />
+		<controlpoint xx="-2.03755" yy="0" zz="1.40037" />
+		<controlpoint xx="-2.06191" yy="0" zz="1.39078" />
+		<controlpoint xx="-2.0861" yy="0" zz="1.38076" />
+		<controlpoint xx="-2.1101" yy="0" zz="1.37032" />
+		<controlpoint xx="-2.13393" yy="0" zz="1.35946" />
+		<controlpoint xx="-2.15756" yy="0" zz="1.34819" />
+		<controlpoint xx="-2.18099" yy="0" zz="1.33651" />
+		<controlpoint xx="-2.20421" yy="0" zz="1.32442" />
+		<controlpoint xx="-2.22721" yy="0" zz="1.31193" />
+		<controlpoint xx="-2.25" yy="0" zz="1.29904" />
+		<controlpoint xx="-2.27256" yy="0" zz="1.28575" />
+		<controlpoint xx="-2.29488" yy="0" zz="1.27207" />
+		<controlpoint xx="-2.31696" yy="0" zz="1.25801" />
+		<controlpoint xx="-2.33879" yy="0" zz="1.24356" />
+		<controlpoint xx="-2.36036" yy="0" zz="1.22873" />
+		<controlpoint xx="-2.38168" yy="0" zz="1.21353" />
+		<controlpoint xx="-2.40272" yy="0" zz="1.19795" />
+		<controlpoint xx="-2.42349" yy="0" zz="1.18202" />
+		<controlpoint xx="-2.44398" yy="0" zz="1.16572" />
+		<controlpoint xx="-2.46418" yy="0" zz="1.14907" />
+		<controlpoint xx="-2.48409" yy="0" zz="1.13206" />
+		<controlpoint xx="-2.5037" yy="0" zz="1.11472" />
+		<controlpoint xx="-2.523" yy="0" zz="1.09703" />
+		<controlpoint xx="-2.54199" yy="0" zz="1.07901" />
+		<controlpoint xx="-2.56066" yy="0" zz="1.06066" />
+		<controlpoint xx="-2.57901" yy="0" zz="1.04199" />
+		<controlpoint xx="-2.59703" yy="0" zz="1.023" />
+		<controlpoint xx="-2.61472" yy="0" zz="1.0037" />
+		<controlpoint xx="-2.63206" yy="0" zz="0.984089" />
+		<controlpoint xx="-2.64907" yy="0" zz="0.964181" />
+		<controlpoint xx="-2.66572" yy="0" zz="0.943981" />
+		<controlpoint xx="-2.68202" yy="0" zz="0.923492" />
+		<controlpoint xx="-2.69795" yy="0" zz="0.902723" />
+		<controlpoint xx="-2.71353" yy="0" zz="0.881678" />
+		<controlpoint xx="-2.72873" yy="0" zz="0.860365" />
+		<controlpoint xx="-2.74356" yy="0" zz="0.838789" />
+		<controlpoint xx="-2.75801" yy="0" zz="0.816959" />
+		<controlpoint xx="-2.77207" yy="0" zz="0.794879" />
+		<controlpoint xx="-2.78575" yy="0" zz="0.772557" />
+		<controlpoint xx="-2.79904" yy="0" zz="0.75" />
+		<controlpoint xx="-2.81193" yy="0" zz="0.727214" />
+		<controlpoint xx="-2.82442" yy="0" zz="0.704207" />
+		<controlpoint xx="-2.83651" yy="0" zz="0.680986" />
+		<controlpoint xx="-2.84819" yy="0" zz="0.657557" />
+		<controlpoint xx="-2.85946" yy="0" zz="0.633927" />
+		<controlpoint xx="-2.87032" yy="0" zz="0.610105" />
+		<controlpoint xx="-2.88076" yy="0" zz="0.586097" />
+		<controlpoint xx="-2.89078" yy="0" zz="0.56191" />
+		<controlpoint xx="-2.90037" yy="0" zz="0.537552" />
+		<controlpoint xx="-2.90954" yy="0" zz="0.51303" />
+		<controlpoint xx="-2.91828" yy="0" zz="0.488352" />
+		<controlpoint xx="-2.92658" yy="0" zz="0.463525" />
+		<controlpoint xx="-2.93446" yy="0" zz="0.438558" />
+		<controlpoint xx="-2.94189" yy="0" zz="0.413456" />
+		<controlpoint xx="-2.94889" yy="0" zz="0.388229" />
+		<controlpoint xx="-2.95544" yy="0" zz="0.362883" />
+		<controlpoint xx="-2.96156" yy="0" zz="0.337427" />
+		<controlpoint xx="-2.96722" yy="0" zz="0.311868" />
+		<controlpoint xx="-2.97244" yy="0" zz="0.286213" />
+		<controlpoint xx="-2.97721" yy="0" zz="0.260472" />
+		<controlpoint xx="-2.98153" yy="0" zz="0.234652" />
+		<controlpoint xx="-2.9854" yy="0" zz="0.20876" />
+		<controlpoint xx="-2.98882" yy="0" zz="0.182804" />
+		<controlpoint xx="-2.99178" yy="0" zz="0.156793" />
+		<controlpoint xx="-2.99429" yy="0" zz="0.130734" />
+		<controlpoint xx="-2.99635" yy="0" zz="0.104635" />
+		<controlpoint xx="-2.99794" yy="0" zz="0.0785039" />
+		<controlpoint xx="-2.99909" yy="0" zz="0.0523492" />
+		<controlpoint xx="-2.99977" yy="0" zz="0.0261786" />
+		<controlpoint xx="-3" yy="0" zz="1.83691e-016" />
+		<controlpoint xx="-2.99977" yy="0" zz="-0.0261786" />
+		<controlpoint xx="-2.99909" yy="0" zz="-0.0523492" />
+		<controlpoint xx="-2.99794" yy="0" zz="-0.0785039" />
+		<controlpoint xx="-2.99635" yy="0" zz="-0.104635" />
+		<controlpoint xx="-2.99429" yy="0" zz="-0.130734" />
+		<controlpoint xx="-2.99178" yy="0" zz="-0.156793" />
+		<controlpoint xx="-2.98882" yy="0" zz="-0.182804" />
+		<controlpoint xx="-2.9854" yy="0" zz="-0.20876" />
+		<controlpoint xx="-2.98153" yy="0" zz="-0.234652" />
+		<controlpoint xx="-2.97721" yy="0" zz="-0.260472" />
+		<controlpoint xx="-2.97244" yy="0" zz="-0.286213" />
+		<controlpoint xx="-2.96722" yy="0" zz="-0.311868" />
+		<controlpoint xx="-2.96156" yy="0" zz="-0.337427" />
+		<controlpoint xx="-2.95544" yy="0" zz="-0.362883" />
+		<controlpoint xx="-2.94889" yy="0" zz="-0.388229" />
+		<controlpoint xx="-2.94189" yy="0" zz="-0.413456" />
+		<controlpoint xx="-2.93446" yy="0" zz="-0.438558" />
+		<controlpoint xx="-2.92658" yy="0" zz="-0.463525" />
+		<controlpoint xx="-2.91828" yy="0" zz="-0.488352" />
+		<controlpoint xx="-2.90954" yy="0" zz="-0.51303" />
+		<controlpoint xx="-2.90037" yy="0" zz="-0.537552" />
+		<controlpoint xx="-2.89078" yy="0" zz="-0.56191" />
+		<controlpoint xx="-2.88076" yy="0" zz="-0.586097" />
+		<controlpoint xx="-2.87032" yy="0" zz="-0.610105" />
+		<controlpoint xx="-2.85946" yy="0" zz="-0.633927" />
+		<controlpoint xx="-2.84819" yy="0" zz="-0.657557" />
+		<controlpoint xx="-2.83651" yy="0" zz="-0.680986" />
+		<controlpoint xx="-2.82442" yy="0" zz="-0.704207" />
+		<controlpoint xx="-2.81193" yy="0" zz="-0.727214" />
+		<controlpoint xx="-2.79904" yy="0" zz="-0.75" />
+		<controlpoint xx="-2.78575" yy="0" zz="-0.772557" />
+		<controlpoint xx="-2.77207" yy="0" zz="-0.794879" />
+		<controlpoint xx="-2.75801" yy="0" zz="-0.816959" />
+		<controlpoint xx="-2.74356" yy="0" zz="-0.838789" />
+		<controlpoint xx="-2.72873" yy="0" zz="-0.860365" />
+		<controlpoint xx="-2.71353" yy="0" zz="-0.881678" />
+		<controlpoint xx="-2.69795" yy="0" zz="-0.902723" />
+		<controlpoint xx="-2.68202" yy="0" zz="-0.923492" />
+		<controlpoint xx="-2.66572" yy="0" zz="-0.943981" />
+		<controlpoint xx="-2.64907" yy="0" zz="-0.964181" />
+		<controlpoint xx="-2.63206" yy="0" zz="-0.984089" />
+		<controlpoint xx="-2.61472" yy="0" zz="-1.0037" />
+		<controlpoint xx="-2.59703" yy="0" zz="-1.023" />
+		<controlpoint xx="-2.57901" yy="0" zz="-1.04199" />
+		<controlpoint xx="-2.56066" yy="0" zz="-1.06066" />
+		<controlpoint xx="-2.54199" yy="0" zz="-1.07901" />
+		<controlpoint xx="-2.523" yy="0" zz="-1.09703" />
+		<controlpoint xx="-2.5037" yy="0" zz="-1.11472" />
+		<controlpoint xx="-2.48409" yy="0" zz="-1.13206" />
+		<controlpoint xx="-2.46418" yy="0" zz="-1.14907" />
+		<controlpoint xx="-2.44398" yy="0" zz="-1.16572" />
+		<controlpoint xx="-2.42349" yy="0" zz="-1.18202" />
+		<controlpoint xx="-2.40272" yy="0" zz="-1.19795" />
+		<controlpoint xx="-2.38168" yy="0" zz="-1.21353" />
+		<controlpoint xx="-2.36036" yy="0" zz="-1.22873" />
+		<controlpoint xx="-2.33879" yy="0" zz="-1.24356" />
+		<controlpoint xx="-2.31696" yy="0" zz="-1.25801" />
+		<controlpoint xx="-2.29488" yy="0" zz="-1.27207" />
+		<controlpoint xx="-2.27256" yy="0" zz="-1.28575" />
+		<controlpoint xx="-2.25" yy="0" zz="-1.29904" />
+		<controlpoint xx="-2.22721" yy="0" zz="-1.31193" />
+		<controlpoint xx="-2.20421" yy="0" zz="-1.32442" />
+		<controlpoint xx="-2.18099" yy="0" zz="-1.33651" />
+		<controlpoint xx="-2.15756" yy="0" zz="-1.34819" />
+		<controlpoint xx="-2.13393" yy="0" zz="-1.35946" />
+		<controlpoint xx="-2.1101" yy="0" zz="-1.37032" />
+		<controlpoint xx="-2.0861" yy="0" zz="-1.38076" />
+		<controlpoint xx="-2.06191" yy="0" zz="-1.39078" />
+		<controlpoint xx="-2.03755" yy="0" zz="-1.40037" />
+		<controlpoint xx="-2.01303" yy="0" zz="-1.40954" />
+		<controlpoint xx="-1.98835" yy="0" zz="-1.41828" />
+		<controlpoint xx="-1.96353" yy="0" zz="-1.42658" />
+		<controlpoint xx="-1.93856" yy="0" zz="-1.43446" />
+		<controlpoint xx="-1.91346" yy="0" zz="-1.44189" />
+		<controlpoint xx="-1.88823" yy="0" zz="-1.44889" />
+		<controlpoint xx="-1.86288" yy="0" zz="-1.45544" />
+		<controlpoint xx="-1.83743" yy="0" zz="-1.46156" />
+		<controlpoint xx="-1.81187" yy="0" zz="-1.46722" />
+		<controlpoint xx="-1.78621" yy="0" zz="-1.47244" />
+		<controlpoint xx="-1.76047" yy="0" zz="-1.47721" />
+		<controlpoint xx="-1.73465" yy="0" zz="-1.48153" />
+		<controlpoint xx="-1.70876" yy="0" zz="-1.4854" />
+		<controlpoint xx="-1.6828" yy="0" zz="-1.48882" />
+		<controlpoint xx="-1.65679" yy="0" zz="-1.49178" />
+		<controlpoint xx="-1.63073" yy="0" zz="-1.49429" />
+		<controlpoint xx="-1.60463" yy="0" zz="-1.49635" />
+		<controlpoint xx="-1.5785" yy="0" zz="-1.49794" />
+		<controlpoint xx="-1.55235" yy="0" zz="-1.49909" />
+		<controlpoint xx="-1.52618" yy="0" zz="-1.49977" />
+		<controlpoint xx="-1.5" yy="0" zz="-1.5" />
+		<controlpoint xx="-1.47382" yy="0" zz="-1.49977" />
+		<controlpoint xx="-1.44765" yy="0" zz="-1.49909" />
+		<controlpoint xx="-1.4215" yy="0" zz="-1.49794" />
+		<controlpoint xx="-1.39537" yy="0" zz="-1.49635" />
+		<controlpoint xx="-1.36927" yy="0" zz="-1.49429" />
+		<controlpoint xx="-1.34321" yy="0" zz="-1.49178" />
+		<controlpoint xx="-1.3172" yy="0" zz="-1.48882" />
+		<controlpoint xx="-1.29124" yy="0" zz="-1.4854" />
+		<controlpoint xx="-1.26535" yy="0" zz="-1.48153" />
+		<controlpoint xx="-1.23953" yy="0" zz="-1.47721" />
+		<controlpoint xx="-1.21379" yy="0" zz="-1.47244" />
+		<controlpoint xx="-1.18813" yy="0" zz="-1.46722" />
+		<controlpoint xx="-1.16257" yy="0" zz="-1.46156" />
+		<controlpoint xx="-1.13712" yy="0" zz="-1.45544" />
+		<controlpoint xx="-1.11177" yy="0" zz="-1.44889" />
+		<controlpoint xx="-1.08654" yy="0" zz="-1.44189" />
+		<controlpoint xx="-1.06144" yy="0" zz="-1.43446" />
+		<controlpoint xx="-1.03647" yy="0" zz="-1.42658" />
+		<controlpoint xx="-1.01165" yy="0" zz="-1.41828" />
+		<controlpoint xx="-0.98697" yy="0" zz="-1.40954" />
+		<controlpoint xx="-0.962448" yy="0" zz="-1.40037" />
+		<controlpoint xx="-0.93809" yy="0" zz="-1.39078" />
+		<controlpoint xx="-0.913903" yy="0" zz="-1.38076" />
+		<controlpoint xx="-0.889895" yy="0" zz="-1.37032" />
+		<controlpoint xx="-0.866073" yy="0" zz="-1.35946" />
+		<controlpoint xx="-0.842443" yy="0" zz="-1.34819" />
+		<controlpoint xx="-0.819014" yy="0" zz="-1.33651" />
+		<controlpoint xx="-0.795793" yy="0" zz="-1.32442" />
+		<controlpoint xx="-0.772786" yy="0" zz="-1.31193" />
+		<controlpoint xx="-0.75" yy="0" zz="-1.29904" />
+		<controlpoint xx="-0.727443" yy="0" zz="-1.28575" />
+		<controlpoint xx="-0.705121" yy="0" zz="-1.27207" />
+		<controlpoint xx="-0.683041" yy="0" zz="-1.25801" />
+		<controlpoint xx="-0.661211" yy="0" zz="-1.24356" />
+		<controlpoint xx="-0.639635" yy="0" zz="-1.22873" />
+		<controlpoint xx="-0.618322" yy="0" zz="-1.21353" />
+		<controlpoint xx="-0.597277" yy="0" zz="-1.19795" />
+		<controlpoint xx="-0.576508" yy="0" zz="-1.18202" />
+		<controlpoint xx="-0.556019" yy="0" zz="-1.16572" />
+		<controlpoint xx="-0.535819" yy="0" zz="-1.14907" />
+		<controlpoint xx="-0.515911" yy="0" zz="-1.13206" />
+		<controlpoint xx="-0.496304" yy="0" zz="-1.11472" />
+		<controlpoint xx="-0.477002" yy="0" zz="-1.09703" />
+		<controlpoint xx="-0.458012" yy="0" zz="-1.07901" />
+		<controlpoint xx="-0.43934" yy="0" zz="-1.06066" />
+		<controlpoint xx="-0.42099" yy="0" zz="-1.04199" />
+		<controlpoint xx="-0.402969" yy="0" zz="-1.023" />
+		<controlpoint xx="-0.385283" yy="0" zz="-1.0037" />
+		<controlpoint xx="-0.367936" yy="0" zz="-0.984089" />
+		<controlpoint xx="-0.350933" yy="0" zz="-0.964181" />
+		<controlpoint xx="-0.334281" yy="0" zz="-0.943981" />
+		<controlpoint xx="-0.317984" yy="0" zz="-0.923492" />
+		<controlpoint xx="-0.302047" yy="0" zz="-0.902723" />
+		<controlpoint xx="-0.286475" yy="0" zz="-0.881678" />
+		<controlpoint xx="-0.271272" yy="0" zz="-0.860365" />
+		<controlpoint xx="-0.256444" yy="0" zz="-0.838789" />
+		<controlpoint xx="-0.241994" yy="0" zz="-0.816959" />
+		<controlpoint xx="-0.227928" yy="0" zz="-0.794879" />
+		<controlpoint xx="-0.214249" yy="0" zz="-0.772557" />
+		<controlpoint xx="-0.200962" yy="0" zz="-0.75" />
+		<controlpoint xx="-0.18807" yy="0" zz="-0.727214" />
+		<controlpoint xx="-0.175579" yy="0" zz="-0.704207" />
+		<controlpoint xx="-0.16349" yy="0" zz="-0.680986" />
+		<controlpoint xx="-0.151809" yy="0" zz="-0.657557" />
+		<controlpoint xx="-0.140538" yy="0" zz="-0.633927" />
+		<controlpoint xx="-0.129682" yy="0" zz="-0.610105" />
+		<controlpoint xx="-0.119243" yy="0" zz="-0.586097" />
+		<controlpoint xx="-0.109224" yy="0" zz="-0.56191" />
+		<controlpoint xx="-0.0996294" yy="0" zz="-0.537552" />
+		<controlpoint xx="-0.0904611" yy="0" zz="-0.51303" />
+		<controlpoint xx="-0.0817221" yy="0" zz="-0.488352" />
+		<controlpoint xx="-0.0734152" yy="0" zz="-0.463525" />
+		<controlpoint xx="-0.0655429" yy="0" zz="-0.438558" />
+		<controlpoint xx="-0.0581075" yy="0" zz="-0.413456" />
+		<controlpoint xx="-0.0511113" yy="0" zz="-0.388229" />
+		<controlpoint xx="-0.0445564" yy="0" zz="-0.362883" />
+		<controlpoint xx="-0.0384449" yy="0" zz="-0.337427" />
+		<controlpoint xx="-0.0327786" yy="0" zz="-0.311868" />
+		<controlpoint xx="-0.0275592" yy="0" zz="-0.286213" />
+		<controlpoint xx="-0.0227884" yy="0" zz="-0.260472" />
+		<controlpoint xx="-0.0184675" yy="0" zz="-0.234652" />
+		<controlpoint xx="-0.0145979" yy="0" zz="-0.20876" />
+		<controlpoint xx="-0.0111808" yy="0" zz="-0.182804" />
+		<controlpoint xx="-0.00821716" yy="0" zz="-0.156793" />
+		<controlpoint xx="-0.00570795" yy="0" zz="-0.130734" />
+		<controlpoint xx="-0.00365392" yy="0" zz="-0.104635" />
+		<controlpoint xx="-0.0020557" yy="0" zz="-0.0785039" />
+		<controlpoint xx="-0.000913759" yy="0" zz="-0.0523492" />
+		<controlpoint xx="-0.000228457" yy="0" zz="-0.0261786" />
+		<controlpoint xx="0" yy="0" zz="0" />
+	</animation>
+  </animations>
+  
+  <graph rootid="cena">
+         <node id="cena">
+            <transforms>
+            </transforms> 
+			
+            <children>
+				<noderef id="skybox" />
+				<noderef id="water" />
+            </children>
+        </node>
+		<node id="water" >
+			<transforms>
+				<scale factor="20 1 5" />
+				<translate to="0 -5 -7.5" />
+			</transforms>
+			
+			<children>
+				<waterline heightmap="watermap.jpg" texturemap="water.jpg" fragmentshader="fragShader.frag" vertexshader="textShader.vert" />
+			</children>
+		</node>
+		
+		<node id="skybox" displaylist="true" >
+			<transforms>
+			</transforms>
+			
+			<children>
+				<noderef id="floor" />
+				<noderef id="ceiling" />
+				<noderef id="boxleft" />
+				<noderef id="boxright" />
+				<noderef id="boxfront" />
+				<noderef id="boxbehind" />
+			</children>
+		</node>
+		
+		<node id="boxbehind" >
+			<transforms>
+				<translate to="0 0 50" />
+				<rotate axis="z" angle="180" />
+				<rotate axis="x" angle="-90" />
+				<scale factor="100 0 100" />
+			</transforms>
+			
+			<appearanceref id="boxbehind" />
+			
+			<children>
+				<plane parts="100" />
+			</children>
+		</node>
+		
+		<node id="boxfront" >
+			<transforms>
+				<translate to="0 0 -50" />
+				<rotate axis="x" angle="90" />
+				<scale factor="100 0 100" />
+			</transforms>
+			
+			<appearanceref id="boxfront" />
+			
+			<children>
+				<plane parts="100" />
+			</children>
+		</node>
+		
+		<node id="boxright" >
+			<transforms>
+				<translate to="50 0 0" />
+				<rotate axis="y" angle="-90" />
+				<rotate axis="x" angle="90" />
+				<scale factor="100 0 100" />
+			</transforms>
+			
+			<appearanceref id="boxright" />
+			
+			<children>
+				<plane parts="100" />
+			</children>
+		</node>
+		
+		<node id="boxleft" >
+			<transforms>
+				<translate to="-50 0 0" />
+				<rotate axis="y" angle="90" />
+				<rotate axis="x" angle="90" />
+				<scale factor="100 0 100" />
+			</transforms>
+			
+			<appearanceref id="boxleft" />
+			
+			<children>
+				<plane parts="100" />
+			</children>
+		</node>
+		
+		<node id="ceiling" >
+			<transforms>
+				<translate to="0 50 0" />
+				<rotate axis="x" angle="180" />
+				<scale factor="100 0 100" />
+			</transforms>
+			
+			<appearanceref id="boxceiling" />
+			
+			<children>
+				<plane parts="100" />
+			</children>
+		</node>
+		
+		<node id="floor" >
+			<transforms>
+				<translate to="0 -50 0" />
+				<scale factor="100 0 100" />
+			</transforms>
+			
+			<appearanceref id="boxfloor" />
+			
+			<children>
+				<plane parts="100" />
+			</children>
+		</node>
+		
+    </graph> 
+	
+	<blackPiece rootid="bpiece">
+		<node id="bpiece" displaylist="false" >
+            <transforms>
+				<translate to="0 1 0" />
+				<scale factor="1.5 1.5 1.5" />
+            </transforms> 
+			
+			<animationref id="boatAnimation" />
+			<appearanceref id="boat2" />
+			
+            <children>
+				<noderef id="gull" />
+				<vehicle/>
+            </children>
+        </node>
+		<node id="gull" displaylist="false" >
+			<transforms>
+				<translate to="1.5 2.6 0" />
+            </transforms>
+			<animationref id="gullAnim" />
+			<appearanceref id="black" />	
+			<children>
+				<model filepath="gull.obj"/>
+			</children>
+		</node>
+	</blackPiece>
+	
+	<whitePiece rootid="wpiece">
+		<node id="wpiece" displaylist="false" >
+            <transforms>
+				<translate to="0 1 0" />
+				<rotate axis="y" angle="180" />
+				<scale factor="1.5 1.5 1.5" />
+            </transforms>
+
+			<animationref id="boatAnimation" />
+			<appearanceref id="boat" />			
+			
+            <children>
+				<noderef id="gull"/>
+				<vehicle />
+            </children>
+        </node>
+		<node id="gull" displaylist="false" >
+			<transforms>
+				<translate to="1.5 2.5 0" />
+            </transforms>
+			<animationref id="gullAnim" />
+			<appearanceref id="white" />	
+			<children>
+				<model filepath="gull.obj"/>
+			</children>
+		</node>
+	</whitePiece>
+	
+	<board appearanceID="board" />
+
+</yaf> 
